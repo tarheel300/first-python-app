@@ -7,7 +7,12 @@ class my_first_gui:
         self.root = tk.Tk()
         self.root.title("This is my GUI")
 
-        button = tk.Button(self.root, text="Quit", fg="BLUE", command=self.btn_quit_click)
+        self.frame = tk.Frame(master=self.root)
+        #self.frame.pack_propagate(1)
+        self.frame.place(x = 0, y = 0, relwidth = 100, relheight = 100)
+        #self.frame.pack(fill=tk.BOTH, expand=True)
+
+        button = tk.Button(self.frame, text="Quit", fg="BLUE", command=self.btn_quit_click)
         button.pack()
 
         self.root.mainloop()
